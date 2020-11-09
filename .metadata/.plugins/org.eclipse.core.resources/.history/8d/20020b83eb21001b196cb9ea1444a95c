@@ -1,0 +1,27 @@
+package com.example.demo.controller;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller
+public class HomeController {
+	 @RequestMapping("/home")
+	public String home() {
+		return "home";
+	}
+	 @RequestMapping("/")
+	 @ResponseBody
+	 public String Empty() {
+		 return "Hello";
+	 }
+	 @RequestMapping("/getData")
+	 public String getData(HttpServletRequest res) {
+		 String username = res.getParameter("username");
+		 String password = res.getParameter("password");
+		 System.out.println(username+" "+password);
+		 return "home";
+	 }
+}
