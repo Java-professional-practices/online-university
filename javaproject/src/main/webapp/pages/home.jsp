@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Firstname = ${user.firstname}<br/>
-	Lastname = ${user.lastname}<br/>
-	Age = ${user.age}<br/>
-	City = ${user.city}<br/>
+Hello this is home page
+	Firstname = ${username}<br/>
+	Password = ${password}<br/>
+	Age = ${age}<br/>
+	City = ${city}<br/>
 </body>
 </html>

@@ -5,19 +5,18 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.model.User;
+
+
 
 @Controller
 public class HomeController {
-	//private UserRepository repo;
+	
 	
 	 @RequestMapping("/home")
 	public String home() {
-		return "registration";
+		return "loginform";
 	}
 	 @RequestMapping("/")
 	 @ResponseBody
@@ -29,28 +28,17 @@ public class HomeController {
 	 public String getData(HttpServletRequest res) {
 		 String username = res.getParameter("username");
 		 String password = res.getParameter("password");
+		 String age = res.getParameter("age");
+		 String city = res.getParameter("city");
 		 HttpSession session = res.getSession();
 		 session.setAttribute("username", username);
 		 session.setAttribute("password", password);
+		 session.setAttribute("age", age);
+		 session.setAttribute("city", city);
 		 return "home";
 	 }
 	 
-	 @RequestMapping("getLoginData")
-	 public ModelAndView getLoginData(@RequestParam("username") String username, @RequestParam("password") String password){
-		 ModelAndView mv = new ModelAndView();
-		 mv.addObject("username",username);
-		 mv.addObject("password",password);
-		 mv.setViewName("home");
-		 return mv;
-	 }
-	 @RequestMapping("getUserData")
-	 public ModelAndView getUserData(User user) {
-		 ModelAndView mv = new ModelAndView();
-		 mv.addObject("user",user);
-		 mv.setViewName("home");
-		 return mv;
-		 
-	 }
+	
 		 
 	 
 }

@@ -8,9 +8,12 @@
 </head>
 <body>
 	<form action="getloginData">
+	UserName
 		<input type = "text" name = "username"><br/>
-		<input type = "password" name = "password"><br/>
-		<input type = "submit" value="login">
+		Password<input type = "password" name = "password"><br/>
+		Age<input type = "text" name = "age"><br/>
+		City<input type = "city" name = "city"><br/>
+		<input type = "submit" value="Register">
 	</form>
 </body>
 </html>
